@@ -256,10 +256,10 @@ If the screen is smaller (like mobile), it will shrink automatically. */
 }
 
 /* Features */
-.features-head img,
- .docs-head img {
+.features-head img {
     width: 200px;
-    justify-self: flex-end
+    justify-self: flex-end;
+    animation: rotateIn 2s ease-in;
 }
 
 .features-sub-head img {
@@ -284,6 +284,11 @@ If the screen is smaller (like mobile), it will shrink automatically. */
 }
 
 /* Docs */
+ .docs-head img {
+    width: 200px;
+    justify-self: flex-end;
+    animation: zoomIn 2s ease-in;
+ }
 .docs-main h3 {
     margin: 20px 0;  
 }
@@ -355,6 +360,31 @@ code, pre {
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+
+/* Zoom In */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Rotate In */
+@keyframes rotateIn {
+    0% {
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg);
+        opacity: 1;
     }
 }
 
