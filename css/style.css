@@ -109,6 +109,9 @@ img {
     position: relative;
 }
 
+.showcase h1 {
+    font-size: 40px;
+}
 
 .showcase p {
     margin: 20px 0;
@@ -116,7 +119,7 @@ img {
 
 .showcase .grid {
     overflow: visible;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 55% auto;
     gap: 30px;
 }
 
@@ -162,13 +165,13 @@ img {
 .showcase-form input:focus {
     outline: none;
 }
-
+/* 
 .showcase .showcase-form .btn {
     display: block;
     margin: auto;
     padding: 15px 35px;
     font-size: 18px;
-}
+} */
 
 .showcase::before,
 .showcase::after {
@@ -434,94 +437,8 @@ code, pre {
         background-color: rgba(0, 0, 0, 0.1);
     }
 
-    .showcase h1,
-    .cloud h2,
-    .features-head h1,
-    .features-sub-head h1,
-    .docs-head h1 {
-        font-size: 35px;
-    }
-
-    .showcase p,
-    .cloud .grid p,
-    .features-head p,
-    .docs-head p {
-        margin: 10px 0;
-        font-size: 15px;
-    }
-
-    /* .showcase p,
-    .cloud .grid p {
-        font-size: 15px;
-    } */
-
-    .showcase .btn-outline,
-    .cloud .grid .btn,
-    .docs-main .card .btn {
-        padding: 6px 12px;
-        font-size: 15px;
-    }
-
-    .showcase .showcase-form h2 {
-        font-size: 25px;     
-    }
-
     .showcase .showcase-form {
-        width: 90%;          /* make it smaller */
         max-width: 300px;    /* limit the size */
-        padding: 20px;       /* reduce padding */
-        margin: 20px auto;   /* space and center */
     }
 
-    .showcase .showcase-form input,
-    .showcase .showcase-form .form-control {
-        font-size: 12px;
-        padding: 3px;
-    }
-
-    .showcase .showcase-form .btn {
-        display: block;       /* make it sit on its own line */
-        width: 100%;          /* full-width */
-        padding: 12px;        /* adjust size */
-        text-align: center;   /* center text */
-        margin-top: 10px;     /* optional spacing */
-        font-size: 14px;
-    }
-
-    .stats .stats-heading,
-    .docs-main h3 {
-        font-size: 25px;
-    }
-
-    .stats .grid i {
-        font-size: 30px;
-    }
-
-    .stats .grid h3 {
-        font-size: 25px;
-    }
-
-    .stats .grid p {
-        font-size: 15px;
-    }
-
-    .cli .grid h3 {
-        font-size: 14px;
-    }
-
-    .languages h2 {
-        font-size: 28px;
-        text-shadow: black;
-    }
-
-    .footer .social i {
-        font-size: 20px;
-        margin: 5px;
-    }
-
-    .docs-main .alert {
-        font-size: 12px;
-        padding: 10px 15px;
-    }
-    
 }
