@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* Variables */
+:root {
+    --primary-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+
+.logo {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+    animation: shine 1.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 70px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+
+.navbar a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+
+/* Showcase */
+.showcase {
+    height: 400px;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+
+.showcase p {
+    margin: 20px 0;
+}
+
+.showcase .grid {
+    overflow: visible;
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+}
+
+
+/* Animations text from left to right */
+.showcase-text {
+    animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase .grid h2 {
+    text-align: center;
+}
+
+.showcase-form {
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+
+    /* Important: z-index only works with positioned elements */
+    z-index: 100;
+    justify-self: flex-end;
+
+    animation: slideInFromRight 1s ease-in;
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email'],
+.showcase-form input[type='password'] {
+    border: 0;
+    border-bottom: 1px solid #b4b4b4;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+/* It removes the default blue outline 'box' that appears when you click an input field */
+.showcase-form input:focus {
+    outline: none;
+}
+
+.showcase .showcase-form .btn {
+    display: block;
+    margin: auto;
+    padding: 15px 35px;
+    font-size: 18px;
+}
+
+.showcase::before,
+.showcase::after {
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+} 
+
+
+
+/* Stats */
+.stats {
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
+}
+
+.stats .stats-heading {
+/* This limits the heading section to maximum 500px wide.
+If the screen is larger, it will not grow beyond 500px.
+If the screen is smaller (like mobile), it will shrink automatically. */
+    max-width: 500px;
+
+    /* This centers the heading section. */
+    margin: auto;
+}
+
+.stats .grid h3 {
+    font-size: 35px;
+}
+
+.stats .grid p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* Cli */
+.cli .grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    /* one extra empty row bottom */
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid > *:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+/* Cloud */
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+
+/* Languages */
+.languages .flex {
+    flex-wrap: wrap;
+}
+
+.languages .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+} 
+
+.languages .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.languages .card:hover {
+    transform: translateY(-15px);
+}
+
+/* Features */
+.features-head img,
+ .docs-head img {
+    width: 200px;
+    justify-self: flex-end
+}
+
+.features-sub-head img {
+    width: 300px;
+    justify-self: flex-end;
+}
+
+.features-main .card > i {
+    margin-right: 20px;
+}
+
+.features-main .grid {
+    padding: 30px;
+}
+
+.features-main .grid > *:first-child {
+    grid-column: 1 / span 3;
+}
+
+.features-main .grid > *:nth-child(2) {
+    grid-column: 1 / span 2;
+}
+
+/* Docs */
+.docs-main h3 {
+    margin: 20px 0;  
+}
+
+.docs-main .grid {
+    grid-template-columns: 1fr 2fr;
+
+    /* This aligns the content to the top */
+    align-items: flex-start;
+}
+
+.docs-main nav li {
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.docs-main a:hover {
+    font-weight: bold;
+}
+
+code, pre {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+
+
+/* Footer */
+.footer .social a {
+    margin: 0 10px;
+}
+
+
+
+/* Animations */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* Tablets and under */
+@media(max-width: 768px) {
+   .grid,
+   .showcase .grid,
+   .stats .grid,
+   .cli .grid,
+   .cloud .grid,
+   .features-main .grid,
+   .docs-main .grid {
+       grid-template-columns: 1fr;
+       grid-template-rows: 1fr;
+   }
+
+   .showcase {
+    /* height droped down */
+       height: auto;
+   }
+
+   .showcase-text {
+       text-align: center;
+       margin-top: 40px;
+       animation: slideInFromTop 1s ease-in;
+   }
+
+   .showcase-form {
+    /* This centers the form */
+       justify-self: center;
+       margin: auto;
+       animation: slideInFromBottom 1s ease-in;
+   }
+
+   .cli .grid > *:first-child {
+       grid-column: 1;
+       grid-row: 1;
+   }
+
+   .cli .grid h3 {
+       text-align: center;
+   }
+
+   .features-head,
+   .features-sub-head,
+   .docs-head {
+       text-align: center;
+   }
+
+   .features-head img,
+   .features-sub-head img,
+   .docs-head img {
+       justify-self: center;
+   }
+
+   .features-main .grid > *:first-child,
+   .features-main .grid > *:nth-child(2) {
+       grid-column: 1;
+   }
+
+}
+
+
+/* Mobile */
+@media(max-width: 500px) {
+    .navbar {
+        height: 110px;
+    }   
+
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .showcase h1,
+    .cloud h2,
+    .features-head h1,
+    .features-sub-head h1,
+    .docs-head h1 {
+        font-size: 35px;
+    }
+
+    .showcase p,
+    .cloud .grid p,
+    .features-head p,
+    .docs-head p {
+        margin: 10px 0;
+        font-size: 15px;
+    }
+
+    /* .showcase p,
+    .cloud .grid p {
+        font-size: 15px;
+    } */
+
+    .showcase .btn-outline,
+    .cloud .grid .btn,
+    .docs-main .card .btn {
+        padding: 6px 12px;
+        font-size: 15px;
+    }
+
+    .showcase .showcase-form h2 {
+        font-size: 25px;     
+    }
+
+    .showcase .showcase-form {
+        width: 90%;          /* make it smaller */
+        max-width: 300px;    /* limit the size */
+        padding: 20px;       /* reduce padding */
+        margin: 20px auto;   /* space and center */
+    }
+
+    .showcase .showcase-form input,
+    .showcase .showcase-form .form-control {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    .showcase .showcase-form .btn {
+        display: block;       /* make it sit on its own line */
+        width: 100%;          /* full-width */
+        padding: 12px;        /* adjust size */
+        text-align: center;   /* center text */
+        margin-top: 10px;     /* optional spacing */
+        font-size: 14px;
+    }
+
+    .stats .stats-heading,
+    .docs-main h3 {
+        font-size: 25px;
+    }
+
+    .stats .grid i {
+        font-size: 30px;
+    }
+
+    .stats .grid h3 {
+        font-size: 25px;
+    }
+
+    .stats .grid p {
+        font-size: 15px;
+    }
+
+    .cli .grid h3 {
+        font-size: 14px;
+    }
+
+    .languages h2 {
+        font-size: 28px;
+        text-shadow: black;
+    }
+
+    .footer .social i {
+        font-size: 20px;
+        margin: 5px;
+    }
+
+    .docs-main .alert {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    
+}
