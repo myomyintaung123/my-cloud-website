@@ -5,10 +5,87 @@
     --primary-color: #047aed;
     --secondary-color: #1c3fa8;
     --dark-color: #002240;
+    --white-color: #fff;
     --light-color: #f4f4f4;
     --success-color: #5cb85c;
     --error-color: #d9534f;
+    --gray-color: #333;
 }
+
+
+/* Dark Mode Theme */
+.dark-mode {
+    --primary-color: #364051;
+    --secondary-color: #1E40AF;
+    --dark-color: #0F172A;
+    --white-color: #E5E7EB;
+    --light-color: #1E293B;
+    --success-color: #22C55E;
+    --error-color: #EF4444;
+    --gray-color: #495b75;
+}
+
+body.dark-mode {
+    background-color: #364051;
+    color: var(--white-color);
+}
+
+.dark-mode .card {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    box-shadow: 0 3px 10px rgba(198, 191, 191, 0.305);
+}
+
+.dark-mode .showcase-form input[type='text'],
+.dark-mode .showcase-form input[type='email'],
+.dark-mode .showcase-form input[type='password'] {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.dark-mode .showcase-form input::placeholder {
+    color: var(--white-color);
+}
+
+.dark-mode .showcase-form input:focus {
+    border-bottom: 1px solid #60A5FA;
+}
+
+.dark-mode .lg, p {
+    color: var(--white-color);
+}
+
+
+
+
+
+#theme-switch {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    padding: 0;
+    background-color: rgba(228, 228, 234, 0.53);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.dark-mode #theme-switch svg:first-child {
+    display: none;
+}
+
+.dark-mode #theme-switch svg:last-child {
+    display: block;
+}
+
 
 
 /* Reset */
@@ -20,7 +97,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    color: #333;
+    color: var(--gray-color);
     line-height: 1.6;
 }
 
@@ -30,7 +107,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: #333;
+    color: var(--gray-color);
 }
 
 h1, h2 {
@@ -73,10 +150,11 @@ img {
     height: 0;
 }
 
+
 /* Navbar */
 .navbar {
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--white-color);
     height: 70px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
@@ -86,14 +164,14 @@ img {
 }
 
 .navbar a {
-    color: #fff;
+    color: var(--white-color);
     padding: 10px;
     margin: 0 5px;
 }
 
 
 .navbar a:hover {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid var(--white-color);
 }
 
 .navbar .flex {
@@ -105,7 +183,7 @@ img {
 .showcase {
     height: 400px;
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--white-color);
     position: relative;
 }
 
@@ -181,7 +259,7 @@ img {
     bottom: -70px;
     right: 0;
     left: 0;
-    background: #fff;
+    background: var(--white-color);
     transform: skewY(-3deg);
     -webkit-transform: skewY(-3deg);
     -moz-transform: skewY(-3deg);
@@ -312,8 +390,8 @@ If the screen is smaller (like mobile), it will shrink automatically. */
 }
 
 code, pre {
-    background: #333;
-    color: #fff;
+    background: var(--gray-color);
+    color: var(--white-color);
     padding: 10px;
 }
 
