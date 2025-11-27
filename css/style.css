@@ -2,76 +2,46 @@
 
 /* Variables */
 :root {
-    --primary-color: #047aed;
+    --primary-color: #00008b;
     --secondary-color: #1c3fa8;
     --dark-color: #002240;
     --white-color: #fff;
     --light-color: #f4f4f4;
     --success-color: #5cb85c;
-    --error-color: #d9534f;
     --gray-color: #333;
 }
 
 
 /* Dark Mode Theme */
 .dark-mode {
-    --primary-color: #364051;
-    --secondary-color: #1E40AF;
-    --dark-color: #0F172A;
-    --white-color: #E5E7EB;
-    --light-color: #1E293B;
-    --success-color: #22C55E;
-    --error-color: #EF4444;
-    --gray-color: #495b75;
+    --primary-color: #000;
+    --secondary-color: #333;
+    --dark-color: #333;
+    --white-color: #fff;
+    --gray-color: #fff;
 }
-
-body.dark-mode {
-    background-color: #364051;
-    color: var(--white-color);
-}
-
-.dark-mode .card {
-    background-color: var(--dark-color);
-    color: var(--white-color);
-    box-shadow: 0 3px 10px rgba(198, 191, 191, 0.305);
-}
-
-.dark-mode .showcase-form input[type='text'],
-.dark-mode .showcase-form input[type='email'],
-.dark-mode .showcase-form input[type='password'] {
-    background-color: var(--dark-color);
-    color: var(--white-color);
-}
-
-.dark-mode .showcase-form input::placeholder {
-    color: var(--white-color);
-}
-
-.dark-mode .showcase-form input:focus {
-    border-bottom: 1px solid #60A5FA;
-}
-
-.dark-mode .lg, p {
-    color: var(--white-color);
-}
-
 
 
 
 
 #theme-switch {
-    height: 32px;
-    width: 32px;
+    height: 28px;
+    width: 28px;
     border-radius: 50%;
     padding: 0;
-    background-color: rgba(228, 228, 234, 0.53);
+    background-color: var(--light-color);
     display: flex;
     justify-content: center;
     align-items: center;
+
+      /* REMOVE shadow + borders behind the button */
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
 #theme-switch svg {
-    fill: var(--primary-color);
+    fill: var(--dark-color);
 }
 
 #theme-switch svg:last-child {
@@ -212,6 +182,8 @@ img {
 }
 
 .showcase-form {
+    background-color: var(--dark-color);
+    color: var(--white-color);
     position: relative;
     top: 60px;
     height: 350px;
@@ -340,6 +312,7 @@ If the screen is smaller (like mobile), it will shrink automatically. */
     animation: rotateIn 2s ease-in;
 }
 
+
 .features-sub-head img {
     width: 300px;
     justify-self: flex-end;
@@ -390,7 +363,7 @@ If the screen is smaller (like mobile), it will shrink automatically. */
 }
 
 code, pre {
-    background: var(--gray-color);
+    background: var(--primary-color);
     color: var(--white-color);
     padding: 10px;
 }
