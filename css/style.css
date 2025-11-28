@@ -2,6 +2,7 @@
 
 /* Variables */
 :root {
+    --base-color: white;
     --primary-color: #00008b;
     --secondary-color: #1c3fa8;
     --dark-color: #002240;
@@ -14,6 +15,7 @@
 
 /* Dark Mode Theme */
 .dark-mode {
+    --base-color: #000;
     --primary-color: #000;
     --secondary-color: #333;
     --dark-color: #333;
@@ -67,6 +69,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    background-color: var(--base-color);
     color: var(--gray-color);
     line-height: 1.6;
 }
@@ -209,11 +212,21 @@ img {
     width: 100%;
     padding: 3px;
     font-size: 16px;
+
+    background: transparent; /* You can change this */
+    color: var(--white-color); /* Text color */
 }
+
+.showcase-form input::placeholder {
+    color: var(--white-color); /* Light placeholder color */
+    opacity: 1;     /* Make it fully visible */
+}
+
 
 /* It removes the default blue outline 'box' that appears when you click an input field */
 .showcase-form input:focus {
     outline: none;
+    border-bottom: 1px solid var(--primary-color); /* Your theme color */
 }
 /* 
 .showcase .showcase-form .btn {
